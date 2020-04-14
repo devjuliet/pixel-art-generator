@@ -1,8 +1,8 @@
 import React from "react";
 
-import ColourPicker from "../colour-picker/colour-picker.component";
-import Eraser from "../eraser/eraser.component";
-import Brush from "../brush/brush.component";
+import ColourPicker from "../ColourPicker/ColourPicker";
+import Eraser from "../Eraser/Eraser";
+import Brush from "../Brush/Brush";
 
 const ToolsBoard = () => (
   <div className="d-flex justify-content-start">
