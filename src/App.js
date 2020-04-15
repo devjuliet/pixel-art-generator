@@ -1,17 +1,15 @@
 import React from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import ToolsBoard from "./components/ToolsBoard/ToolsBoard";
+//import Footer from "./components/Footer/Footer";
 import Menu from "./components/Menu/Menu";
-import Canvas from "./components/Canvas/Canvas";
+import Workspace from "./components/Workspace/Workspace"
 
 function App() {
     return (
         <div>
             <Header />
-            <ToolsBoard />
-            <Canvas/>
+            <Workspace/>
             <Menu />
         </div>
     );
