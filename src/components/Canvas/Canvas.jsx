@@ -5,11 +5,13 @@ class Canvas extends Component {
     constructor() {
         super();
         this.state = {
-            height: 15,
-            width: 30,
+            height: 20,
+            width: 20,
             cellColor: null,
             cellBackground: "#fff",
+            background: "#fff",
         };
+        
     }
 
     componentDidUpdate(prevProps) {
@@ -19,6 +21,11 @@ class Canvas extends Component {
         }
     }
 
+    handleCellColorOnClick = (event) => {
+        event.target.style.cellBackground = this.props.cellColor;
+        console.log(event.target.style.cellBackground);
+    };
+
     createTable = () => {
         let table = [];
 
@@ -26,7 +33,7 @@ class Canvas extends Component {
         for (let i = 0; i < this.state.height; i++) {
             let children = [];
             for (let j = 0; j < this.state.width; j++) {
-                children.push(<td></td>); // width
+                children.push(<td style={{'background-color': this.state.cellBackground}}></td>); // width
             }
             //this too ??
             table.push(<tr>{children}</tr>); // height
@@ -40,7 +47,8 @@ class Canvas extends Component {
                 {this.props.cellColor}
                 <div className="center">
                     <table
-                        style={{ backgroundColor: this.state.cellBackground }}
+                        style={{ cellBackground: this.state.background }}
+                        onClick={this.handleCellColorOnClick}
                     >
                         {this.createTable()}
                     </table>
